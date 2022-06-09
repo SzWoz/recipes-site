@@ -1,12 +1,20 @@
 import { useRef } from "react";
-
+import { AuthProvider, useAuth } from "../context/AuthContext";
 
 function Signup() {
 
     const emailRef = useRef()
     const passwordRef = useRef()
     const confirmPassRef = useRef()
+    const signup = useAuth()
 
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (passwordRef.current.value === confirmPassRef.current.value) {
+            console.log("yaay")
+        }
+    }
 
     return (
         <>
